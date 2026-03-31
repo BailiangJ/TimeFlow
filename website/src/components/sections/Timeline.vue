@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 
 // 21 steps from t=0.00 to t=2.00 in 0.10 increments
 const steps = Array.from({ length: 21 }, (_, i) => (i * 0.1).toFixed(2));
+const base = import.meta.env.BASE_URL;
 
 const sliderVal = ref(0);
 const tStr = computed(() => sliderVal.value.toFixed(2));
@@ -91,7 +92,7 @@ const ticks = [0.0, 0.5, 1.0, 1.5, 2.0];
           <img
             v-for="step in steps"
             :key="step"
-            :src="`/frames/warped_t${step}.png`"
+            :src="`${base}frames/warped_t${step}.png`"
             :class="['stacked-img', { active: tStr === step }]"
             :alt="`Predicted brain at t=${step}`"
           />
@@ -103,7 +104,7 @@ const ticks = [0.0, 0.5, 1.0, 1.5, 2.0];
           <img
             v-for="step in steps"
             :key="step"
-            :src="`/frames/grid_t${step}.png`"
+            :src="`${base}frames/grid_t${step}.png`"
             :class="['stacked-img', { active: tStr === step }]"
             :alt="`Deformation field at t=${step}`"
           />
