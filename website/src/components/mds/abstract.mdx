@@ -1,0 +1,9 @@
+# Abstract
+
+Tracking longitudinal brain changes from continuous MRI scans is clinically valuable for understanding neurodevelopment and neurodegeneration. However, existing tools require frequent, densely-spaced imaging and cannot forecast what the brain will look like in the future.
+
+**TimeFlow** solves this with just two scans. Given a baseline and a follow-up brain MRI from the same person, TimeFlow learns to predict brain anatomy **at any point in time** — including years **beyond the last visit**. It does this by **conditioning a neural network on continuous time**, so it can smoothly interpolate between visits and extrapolate far into the future, all without needing explicit smoothness constraints.
+
+TimeFlow outperforms prior methods in both registration accuracy and future scan forecasting. Strikingly, its learned time parameter alone can distinguish normal aging from mild cognitive impairment (MCI) and dementia — **no tissue segmentation or manual annotation required**.
+
+<img src="./fig/intro_v2-1.png" style={{width: '75%', display: 'block', margin: '0 auto 24px auto', borderRadius: '8px'}} />

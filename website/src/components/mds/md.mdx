@@ -1,0 +1,25 @@
+---
+
+# Methodology
+
+TimeFlow feeds two brain MRI scans — taken at different ages — into a time-conditioned neural network. The network learns to warp the earlier scan into any requested future state, producing both a predicted brain image and the underlying spatial deformation. Crucially, only two visits are needed: no dense time series, no intermediate scans.
+
+A novel **bidirectional consistency loss** (specifically consisting of **interpolation and extrapolation consistency losses**) ensures predictions are coherent across time: forward and backward deformations must agree, so the model never "cheats" with discontinuous jumps. This removes the usual need for explicit smoothness penalties while enforcing temporal stability.
+
+<img src="./fig/method_v1-1.png" style={{width: '95%', display: 'block', margin: '0 auto 24px auto', borderRadius: '8px'}} />
+
+---
+
+# Results
+
+**Predicting future brain scans.** TimeFlow accurately predicts brain appearance at follow-up visits — including timepoints **beyond the last visit** never seen during training. Below, predictions are compared against real future scans (ground truth).
+
+<img src="./fig/qual_ext_v2_left-1.png" style={{width: '65%', display: 'block', margin: '0 auto 24px auto', borderRadius: '8px'}} />
+
+TimeFlow remains coherent even when extrapolating far beyond the observed interval (t = 2, 4, 6 — no ground truth available), producing smooth, biologically plausible deformation fields.
+
+<img src="./fig/qual_ext_v2_right-1.png" style={{width: '65%', display: 'block', margin: '0 auto 24px auto', borderRadius: '8px'}} />
+
+**Detecting brain disease without labels.** TimeFlow's learned time parameter acts as a brain-age index. It cleanly separates normal aging from Mild Cognitive Impairment (MCI) and Dementia — with no tissue segmentation or manual annotation needed.
+
+<img src="./fig/progress_analysis_v3-1.png" style={{width: '80%', display: 'block', margin: '0 auto 24px auto', borderRadius: '8px'}} />
