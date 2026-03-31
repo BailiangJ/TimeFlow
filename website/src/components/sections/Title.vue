@@ -41,8 +41,9 @@ const venue = "IEEE Transactions on Medical Imaging (TMI)"
 // Buttons
 const buttons = [
   {
-    disabled: true,
+    disabled: false,
     name: "Paper",
+    link: "https://arxiv.org/abs/2501.08667",
     component: Document,
   },
   {
