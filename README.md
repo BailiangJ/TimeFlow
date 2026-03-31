@@ -1,5 +1,5 @@
 # TimeFlow: Temporal Conditioning for Longitudinal Brain MRI Registration and Aging Analysis
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a> [![arXiv](https://img.shields.io/badge/arXiv-2501.08667-b31b1b.svg)](https://arxiv.org/abs/2501.08667)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://bailiangj.github.io/TimeFlow/) [![arXiv](https://img.shields.io/badge/arXiv-2501.08667-b31b1b.svg)](https://arxiv.org/abs/2501.08667) 
 
 keywords: Medical Image Registration, Longitudinal Analysis, Brain MRI, Deep Learning, PyTorch
 
